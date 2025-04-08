@@ -1,8 +1,8 @@
 export const zeroArray2D = (rows: number, columns: number): Array<Array<number>> =>
     Array(rows).fill('').map(_ => Array(columns).fill(0));
 
-export const julianYearsSince2020 = () =>
-    ((new Date(Date.now())).valueOf() / 86400000 + 2440587.5 - 2458850) / 365.25;
+export const julianYearsSince2025 = () =>
+    ((new Date(Date.now())).valueOf() / 86400000 + 2440587.5 - 2460677) / 365.25;
 
 export const round = (num: number, decimalPlaces: number): number =>
     Number(`${Math.round(Number(`${num}e+${decimalPlaces}`))}e-${decimalPlaces}`);

@@ -1,6 +1,6 @@
-import { globe, gnmWmm2020, gtnmWmm2020, hnmWmm2020, htnmWmm2020 } from './constants';
+import { globe, gnmWmm2025, gtnmWmm2025, hnmWmm2025, htnmWmm2025 } from './constants';
 import { Field } from './types';
-import { deg2rad, julianYearsSince2020, normalizeInclination, rad2deg, round, zeroArray2D } from './util';
+import { deg2rad, julianYearsSince2025, normalizeInclination, rad2deg, round, zeroArray2D } from './util';
 
 const P = zeroArray2D(13, 13);
 const DP = zeroArray2D(13, 13);
@@ -55,11 +55,11 @@ export const field = (latitude: number, longitude: number, altitude: number = 0)
         }
     }
 
-    const julianYears = julianYearsSince2020();
+    const julianYears = julianYearsSince2025();
     for (let n = 1; n <= 12; n++) {
         for (let m = 0; m <= 12; m++) {
-            gnm[n][m] = gnmWmm2020[n][m] + julianYears * gtnmWmm2020[n][m];
-            hnm[n][m] = hnmWmm2020[n][m] + julianYears * htnmWmm2020[n][m];
+            gnm[n][m] = gnmWmm2025[n][m] + julianYears * gtnmWmm2025[n][m];
+            hnm[n][m] = hnmWmm2025[n][m] + julianYears * htnmWmm2025[n][m];
         }
     }
 
